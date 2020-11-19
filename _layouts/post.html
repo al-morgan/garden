@@ -21,13 +21,16 @@ layout: default
 
   tags:
   {% for tag in page.tags %}
-    {% for flora in site.flora %}
-      {% if tag == flora.slug %}
-        <a href = "{{ flora.url | relative_url }}">{{ tag }}</a>
-      {% endif %}
-    {% endfor %}
-  {% endfor %}
+    {% assign flora = site.flora | where: "slug", tag | first %}
+    {% if flora %}
+      <a href="{{ flora.url | relative_url }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
+    {% else %}
+      {{ tag }}
+    {% endif %}
 
+  {% endfor %} 
+
+ 
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
