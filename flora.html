@@ -1,0 +1,14 @@
+---
+layout: default
+title: Flora
+---
+<h1>Flora</h1>
+
+<ul>
+    {% for flora in site.flora %}
+        <li>
+            <h2><i>{{ flora.genus | capitalize }} {{ flora.species }}</i></h2>
+            <a href = {{ flora.url }}>Link</a>
+        </li>
+    {% endfor %}
+</ul>
