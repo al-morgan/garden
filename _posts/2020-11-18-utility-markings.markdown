@@ -9,7 +9,7 @@ tag: planning
 <img src="/assets/front_side_telco.jpg" height = 230 title = "Markings"> ![Markings](/assets/front_side_telco2.jpg)
 
 # Power and Gas (front, east of driveway)
-<img src="/assets/front_side_all.jpg" height = 230 title = "Markings">
+<img src="/garden/assets/front_side_all.jpg" height = 230 title = "Markings">
 <img src="/assets/details_junction_box.jpg" height = 230 title = "Markings">
 
 # Near the street
