@@ -19,6 +19,15 @@ layout: default
     {{ content }}
   </div>
 
+  tags:
+  {% for tag in page.tags %}
+    {% for flora in site.flora %}
+      {% if tag == flora.slug %}
+        <a href = "{{ flora.url | relative_url }}">{{ tag }}</a>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
