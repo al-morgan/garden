@@ -3,6 +3,8 @@ layout: default
 ---
 <h1><i>{{ page.genus | capitalize }} {{ page.species }}</i></h1>
 
+{{ page.content }}
+
 <table style="border: 0px blue; padding: 200px; background-color: white">
     {% for post in site.posts %}
         {% for tag in post.tags %}
@@ -10,8 +12,8 @@ layout: default
             <tr padding=0 style="border: 0px solid black; padding: 0px; background-color: white"">
                 <td style="vertical-align: center; border: 0px; padding: 0px" >
                     <div style="border-bottom: 1px solid black; margin-right: 50px; vertical-align:top; height:50%">
-                        <h3 style="margin-bottom: 0px">{{ post.date | date: "%A, %B %d, %Y" }}</h3>
-                        <h1><a href={{ post.url | relative_url }}>{{ post.title }}</a></h1>
+                        <div style="margin-bottom: 0px">{{ post.date | date: "%A, %B %d, %Y" }}</div>
+                        <h2><a href={{ post.url | relative_url }}>{{ post.title }}</a></h2>
                     </div>
                     <div style="height:100%; overflow: hidden; height: 50px; text-overflow: ellipsis">
                         {{ post.content }}
@@ -30,7 +32,3 @@ layout: default
     {% endfor %}
 
 </table>
-
-
-
-{{ page.content }}
