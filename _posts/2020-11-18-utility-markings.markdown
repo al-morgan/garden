@@ -6,7 +6,7 @@ tag: planning
 ---
 # Telecommuncations markings (front, east of driveway)
 
-<img src="/garden/assets/front_side_telco.jpg" height = 230 title = "Markings"> 
+<img src="{{ '/assets/front_side_telco.jpg' | relative_url }}" height = 230 title = "Markings"> 
 <img src="/garden/assets/front_side_telco2.jpg" height = 230 title = "Markings">
 
 # Power and Gas (front, east of driveway)

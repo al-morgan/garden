@@ -9,6 +9,9 @@ layout: default
             {% if tag == page.slug %}
                 <li>
                 <a href={{ post.url | relative_url }}>{{ post.title }}</a>
+                {% if post.photo %}
+                    <img src="{{ '/assets/thumbnails/' | append: post.photo | relative_url }}">
+                {% endif %}
                 </li>
             {% endif %}
         {% endfor %}
