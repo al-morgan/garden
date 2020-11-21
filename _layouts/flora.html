@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<h1>{{ page.genus }} {{ page.species }}</h1>
+<h1><i>{{ page.genus | capitalize }} {{ page.species }}</i></h1>
 
 <table style="border: 0px blue; padding: 200px; background-color: white">
     {% for post in site.posts %}
