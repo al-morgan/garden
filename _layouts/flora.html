@@ -3,16 +3,21 @@ layout: default
 ---
 <h1>{{ page.genus }} {{ page.species }}</h1>
 
-<table style="border: 1px blue; padding: 200px; background-color: white">
+<table style="border: 0px blue; padding: 200px; background-color: white">
     {% for post in site.posts %}
         {% for tag in post.tags %}
             {% if tag == page.slug %}
-            <tr padding=0 style="border: 1px solid black; padding: 0px; background-color: white"">
-                <td style="vertical-align: center; border: 1px; padding: 0px" >
-                    <h3 style="margin-bottom: 0px">{{ post.date | date: "%A, %B %d, %Y" }}</h3>
-                    <h1><a href={{ post.url | relative_url }}>{{ post.title }}</a></h1>
+            <tr padding=0 style="border: 0px solid black; padding: 0px; background-color: white"">
+                <td style="vertical-align: center; border: 0px; padding: 0px" >
+                    <div style="border-bottom: 1px solid black; margin-right: 50px; vertical-align:top; height:50%">
+                        <h3 style="margin-bottom: 0px">{{ post.date | date: "%A, %B %d, %Y" }}</h3>
+                        <h1><a href={{ post.url | relative_url }}>{{ post.title }}</a></h1>
+                    </div>
+                    <div style="height:100%; overflow: hidden; height: 50px; text-overflow: ellipsis">
+                        {{ post.content }}
+                    </div>
                 </td>
-                <td width=200px height=200px style="padding: 0px; margin: 0px; border: 1px black solid; text-align: center">
+                <td width=200px height=200px style="padding: 0px; margin: 0px; border: 0px black solid; text-align: center">
                     {% if post.photo %}
                         <div  style="border: 1px solid black; padding: 5px; display: inline-block">
                             <img src="{{ '/assets/thumbnails/' | append: post.photo | relative_url }}">
