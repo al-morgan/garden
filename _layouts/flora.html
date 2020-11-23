@@ -10,19 +10,19 @@ layout: default
         {% for tag in post.tags %}
             {% if tag == page.slug %}
             <tr padding=0 style="border: 0px solid black; padding: 0px; background-color: white; margin-bottom:0px">
-                <td style="vertical-align: center; border: 0px; padding: 0px" >
-                    <div style="border-bottom: 1px solid black; margin-right: 50px; vertical-align:top; height:100%">
-                        <div style="margin-bottom: 0px">{{ post.date | date: "%A, %B %d, %Y" }}</div>
+                <td style="vertical-align: top; border: 0px; padding: 0px" >
+                    <div style="border-bottom: 0px solid black; margin-right: 30px; vertical-align:top; height:100%">                        
                         <h2 style="margin-bottom: 0px"><a href={{ post.url | relative_url }}>{{ post.title }}</a></h2>
+                        <h5 style="margin-bottom: 10px">{{ post.date | date: "%A, %B %d, %Y" }}</h5>
                     </div>
                     <div style="height:100%; overflow: hidden; height: 50px; text-overflow: ellipsis; display: flex">
                         {{ post.content }}
                     </div>
                 </td>
-                <td width=200px height=200px style="padding: 0px; margin: 0px; border: 0px black solid; text-align: center">
+                <td width=150px height=150px style="padding: 0px; margin: 0px; border: 0px black solid; text-align: center">
                     {% if post.photo %}
                         <div  style="border: 0px solid black; padding: 0px; display: inline-block">
-                            <img src="{{ '/assets/thumbnails/' | append: post.photo | relative_url }}">
+                            <img style="max-width:150px; max-height: 150px" src="{{ '/assets/thumbnails/' | append: post.photo | relative_url }}">
                         </div>
                     {% endif %}
                 </td>
