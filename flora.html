@@ -4,10 +4,6 @@ title: Flora
 ---
 <h1>Flora</h1>
 
-<ul style="list-style-type: none">
-    {% for flora in site.flora %}
-        <li>
-            <a href = {{ flora.url | relative_url }}><i>{{ flora.genus | capitalize }} {{ flora.species }}</i></a> {% if flora.common-names %} ({{ flora.common-names[0] }}) {% endif %}
-        </li>
-    {% endfor %}
-</ul>
+{% for flora in site.flora %}
+<a href = {{ flora.url | relative_url }}><i>{{ flora.genus | capitalize }} {{ flora.species }}</i></a> {% if flora.common-names %} ({{ flora.common-names[0] }}) {% endif %}<br />
+{% endfor %}
