@@ -9,25 +9,27 @@ layout: default
 
   {{ content }}
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-  {%- endif -%}
+<table style="border: 0px blue; padding: 200px; background-color: white">
+    {% for post in site.posts %}
+        <tr padding=0 style="border: 0px solid black; padding: 0px; background-color: white; margin-bottom:0px">
+            <td style="vertical-align: top; border: 0px; padding: 0px" >
+                <div style="border-bottom: 0px solid black; margin-right: 30px; vertical-align:top; height:100%">                        
+                    <h2 style="margin-bottom: 0px"><a href={{ post.url | relative_url }}>{{ post.title }}</a></h2>
+                    <h5 style="margin-bottom: 10px">{{ post.date | date: "%A, %B %d, %Y" }}</h5>
+                </div>
+                <div style="height:100%; overflow: hidden; height: 50px; text-overflow: ellipsis; display: flex">
+                    {{ post.excerpt }}
+                </div>
+            </td>
+            <td width=150px height=150px style="padding: 0px; margin: 0px; border: 0px black solid; text-align: center">
+                {% if post.photo %}
+                    <div  style="border: 0px solid black; padding: 0px; display: inline-block">
+                        <img style="max-width:150px; max-height: 150px" src="{{ '/assets/thumbnails/' | append: post.photo | relative_url }}">
+                    </div>
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
 
 </div>
